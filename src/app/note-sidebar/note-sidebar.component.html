@@ -1,1 +1,9 @@
-<p>note-sidebar works!</p>
+<div *ngFor="let note of noteLists">
+    <div>
+        <b>
+            {{note.notebody}}
+        </b><br/>
+        {{note.timestamp}}
+    </div>
+    <hr/>
+</div>

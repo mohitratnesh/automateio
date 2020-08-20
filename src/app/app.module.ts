@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { NoteSidebarComponent } from './note-sidebar/note-sidebar.component';
 import { NoteBodyComponent } from './note-body/note-body.component';
 import { NoteHeaderComponent } from './note-header/note-header.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { NoteHeaderComponent } from './note-header/note-header.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

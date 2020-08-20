@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NotesServiceService } from './service/notes-service.service';
 
 @Component({
   selector: 'app-note-sidebar',
@@ -7,9 +8,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NoteSidebarComponent implements OnInit {
 
-  constructor() { }
+  public noteLists = [];
 
-  ngOnInit(): void {
+  constructor(private noteService: NotesServiceService) { }
+
+  ngOnInit() {
+    this.getNoteList();
   }
+
+getNoteList(){
+  this.noteService.getNotes()
+                         .subscribe(data => {this.noteLists = data;
+                        console.log(this.noteLists)});
+}
 
 }
